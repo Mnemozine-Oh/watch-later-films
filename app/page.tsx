@@ -42,55 +42,80 @@ export default function Home() {
 
   return (
     <main className="p-5">
-      <h1 className="text-2xl font-bold">🎬 Watch Later Films</h1>
+      {/* <stack>
 
-      <input className="border m-2 border-gray-300 rounded-md px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
-        placeholder="Film name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+        <title/>
 
-      <br /><br />
+        <stack>
+          <stack>
+            <input/>
+            <input/>
+          </stack>
 
-      <input className="border m-2 border-gray-300 rounded-md px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
-        placeholder="Genre"
-        value={genre}
-        onChange={(e) => setGenre(e.target.value)}
-      />
+          <button/>
+        </stack>
+        
+        <title/>
+        <stack>
+          <input/>
+          <button/>
+        </stack>
+      </stack> */}
 
-      <br /><br />
 
-      <button className="bg-blue-600 p-2 text-white font-semiboldpx-5 py-2 rounded-lg hover:bg-blue-700 cursor-pointer" onClick={addFilm}>Add Film</button>
+      <div className="flex flex-col items-left justify-left">
+        <h1 className="text-2xl font-bold">🎬 Watch Later Films</h1>
 
-      <ul className="list-disk list-inside space-y-1">
-        {films.map((film, index) => (
-          <li key={index}>
-            {film.name} ({film.genre})
-          </li>
-        ))}
-      </ul>
+        <div className="flex flex-col items-left justify-left">
+          <div>
+            <input className="border m-2 border-gray-300 rounded-md px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Film name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-      <hr className="my-6 border-gray-200" />
+            <br /><br />
 
-      <h2 className="text-xl font-semibold">🎲 Pick a random film</h2>
+            <input className="border m-2 border-gray-300 rounded-md px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Genre"
+              value={genre}
+              onChange={(e) => setGenre(e.target.value)}
+            />
+          </div>
+          <br /><br />
 
-      <input className="border p-2 m-2 border-gray-300 rounded-md px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
-        placeholder="Genre"
-        value={selectedGenre}
-        onChange={(e) => setSelectedGenre(e.target.value)}
-      />
+          <button className="bg-blue-600 w-[140px] p-2 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 cursor-pointer" onClick={addFilm}>Add Film</button>
+        </div>
+        <ul className="list-disk list-inside space-y-1">
+          {films.map((film, index) => (
+            <li key={index}>
+              {film.name} ({film.genre})
+            </li>
+          ))}
+        </ul>
 
-      <br /><br />
+        <hr className="my-6 border-gray-200" />
 
-      <button className="bg-blue-600 p-2 text-white font-semiboldpx-5 py-2 rounded-lg hover:bg-blue-700 cursor-pointer" onClick={pickRandomFilm}>
-        Pick random film
-      </button>
+        <h2 className="text-xl font-semibold">🎲 Pick a random film</h2>
+        <div>
+          <input className="border p-2 m-2 border-gray-300 rounded-md px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Genre"
+            value={selectedGenre}
+            onChange={(e) => setSelectedGenre(e.target.value)}
+          />
 
-      {randomFilm && (
-        <p>
-          You should watch: <strong>{randomFilm.name}</strong>
-        </p>
-      )}
+          <br /><br />
+
+          <button className="bg-blue-600 w-[150px] p-2 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 cursor-pointer" onClick={pickRandomFilm}>
+            Pick random film
+          </button>
+        </div>
+        {randomFilm && (
+          <p>
+            You should watch: <strong>{randomFilm.name}</strong>
+          </p>
+        )}
+      </div>
     </main>
   );
 }
