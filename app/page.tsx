@@ -106,7 +106,7 @@ export default function Home() {
 
           <br /><br />
 
-          <button className="bg-blue-600 w-[150px] p-2 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 cursor-pointer" onClick={pickRandomFilm}>
+          <button className="bg-blue-800 w-[150px] p-2 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 cursor-pointer" onClick={pickRandomFilm}>
             Pick random film
           </button>
         </div>
